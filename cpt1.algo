@@ -1,0 +1,36 @@
+ALGORITHM ends_with_a_point
+VAR
+    senttence : STRING;
+    i , longeur,count,j: INTEGER;
+    vowels : STRING := "aeiouy";
+    Nb_vowels : INTEGER := 0 ;
+
+BEGIN
+
+    read(sentence);
+WHILE (sentence[sentence.length-1] = '.') DO
+    
+    longeur := sentence.length-2
+     //1- length of sentence is length -2 cuz length-1 ='.'
+    
+
+    FOR i FROM 0 TO longeur  DO      
+        IF (longeur[i] <> ' ') THEN
+            count:=count+1 //2- longeur des mots sans espaces;
+        END_IF
+    END_FOR
+
+    
+    FOR j FROM 0 TO longeur DO
+    IF ((longeur[j]='a')OR(longeur[j]='e')OR(longeur[j]='i')OR(longeur[j]='o')OR(longeur[j]='u')OR(longeur[j]='y'))
+        Nb_vowels:=Nb_vowels+1; // i can make it shorted with JS , but idk if u'll accepted it here
+    END_IF
+    END_FOR
+        
+END_WHILE   
+    write("The length of the sentence is : ", longeur);
+    write("The number of words in the sentence is : ",count);
+    write("The number of vowels in the sentence is : ", Nb_vowels);
+
+
+END
